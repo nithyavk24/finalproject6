@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <title> PROGRAMMING ASSIGNMENT </title>
+    <body>
+        <header>
+            <h1>COMPUTER GRAPHICS </h1>
+        </header>
+        <link rel="stylesheet" href="./style.css">
+        <script src="./3d.js"></script>  
+     
+        <div class="container">
+            <svg style="margin-left:450px" height="280" width="280" onload="init(evt)">
+                
+                <line id = "edge-0" class="edge" x1="50" y1="50" x2="190" y2="50"></line>
+                <line id = "edge-1" class="edge" x1="50" y1="190" x2="190" y2="190"></line>
+                <line id = "edge-2" class="edge" x1="50" y1="50" x2="50" y2="190"></line>
+                <line id = "edge-3" class="edge" x1="190" y1="50" x2="190" y2="190"></line>
+                <line id = "edge-4" class="edge" x1="50" y1="50" x2="190" y2="50"></line>
+                <line id = "edge-5" class="edge" x1="50" y1="190" x2="190" y2="190"></line>
+                <line id = "edge-6" class="edge" x1="50" y1="50" x2="50" y2="190"></line>
+                <line id = "edge-7" class="edge" x1="190" y1="50" x2="190" y2="190"></line>
+                <line id = "edge-8" class="edge" x1="50" y1="50" x2="50" y2="50"></line>
+                <line id = "edge-9" class="edge" x1="190" y1="50" x2="190" y2="50"></line>
+                <line id = "edge-10" class="edge" x1="50" y1="190" x2="50" y2="190"></line>
+                <line id = "edge-11" class="edge" x1="190" y1="190" x2="190" y2="190"></line>
+                
+                <path class="button" d="m50.5 250.5 15 -15 0 8 45 0 0 14 -45 0 0 8 z" onmousedown= "beginRotateY(0.08)" onmouseout="endRotateY()" onmouseup="endRotateY()"></path>
+                <path class="button" d="m190.5 250.5 -15 -15 0 8 -45 0 0 14 45 0 0 8 z" onmousedown= "beginRotateY(-0.08)" onmouseout="endRotateY()" onmouseup="endRotateY()"></path>
+                
+                <path class="button" d="m255.5 50.5 15 15 -8 0 0 45 -14 0 0 -45 -8 0 z" onmousedown= "beginRotateX(0.08)" onmouseout="endRotateX()" onmouseup="endRotateX()"></path>
+                <path class="button" d="m255.5 190.5 15 -15 -8 0 0 -45 -14 0 0 45 -8 0 z" onmousedown= "beginRotateX(-0.08)" onmouseout="endRotateX()" onmouseup="endRotateX()"></path>
+            </svg>
+
+            <h2>PLANAR GEOMETRIC PROJECTIONS</h2>
+            <h3> A) PARALLEL PROJECTIONS</h3>
+            <p><strong >1. Multiview orthographic </strong></p>        
+            <table border="2" style="width: 30%">
+                <tr>
+                    <td><h4>FRONT </h4><svg width="400" height="400" align="center" ><polyline points="60,180 160,180 160,80 60,80 60,180" style="fill:red;stroke:black;stroke-width:2"/></svg></td>
+                    <td><h4>SIDE</h4><svg width="400" height="400" align="center" ><polyline points="60,220 160,220 160,320 60,320 60,220" style="fill:blue;stroke:black;stroke-width:2"/></svg></td>
+                    <td><h4>TOP</h4><svg width="400" height="400" align="center" ><polyline points="200,180 300,180 300,80 200,80 200,180" style="fill:green;stroke:black;stroke-width:2"/></svg></td>
+                </tr>
+            </table>
+                        
+            <p><strong>2. Axonometric</strong></p>        
+            <table border="2" style="width:30%">
+                <tr>
+                    <td>
+                        <h4>ISOMETRIC</h4>
+                        <svg width="400" height="400" >
+                            <polyline points="100,300 100,200 14,150 14,250 100,300" style="fill:red  ;stroke:black;stroke-width:2"/>
+                            <polyline points="100,300 100,200 186,150 186,250 100,300" style="fill:blue  ;stroke:black;stroke-width:2"/>
+                            <polyline points="100,200 14,150 100,101 186,150 100,200" style="fill:green  ;stroke:black;stroke-width:2"/>
+                            <line x1="100" y1="101" x2="100" y2="201" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="100" y1="201" x2="14" y2="250" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="100" y1="201" x2="186" y2="250" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                        </svg>
+                    </td>
+
+                    <td>
+                        <h4>DIMETRIC</h4>
+                        <svg width="400" height="400"  >
+                            <polyline points="100,300 100,200 7,166 7,266 100,300" style="fill:red;stroke:black;stroke-width:2"/>
+                            <polyline points="100,300 100,200 193,166 193,266 100,300" style="fill:blue;stroke:black;stroke-width:2"/>
+                            <polyline points="100,200 7,166 100,133 193,166 100,200" style="fill:green;stroke:black;stroke-width:2"/>
+                            <line x1="100" y1="133" x2="100" y2="233" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="100" y1="233" x2="193" y2="266" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="100" y1="233" x2="7" y2="266" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                        </svg>
+                    </td>
+
+                    <td>
+                        <h4>TRIMETRIC</h4>
+                        <svg width="400" height="400">
+                            <polyline points="100,300 100,200 7,166 7,266 100,300" style="fill:red;stroke:black;stroke-width:2"/>
+                            <polyline points="100,300 100,200 158,132 158,232 100,300" style="fill:blue;stroke:black;stroke-width:2"/>
+                            <polyline points="100,200 7,166 64,97 158,132 100,200" style="fill:green;stroke:black;stroke-width:2"/>
+
+                            <line x1="64" y1="97" x2="64" y2="197" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="64" y1="197" x2="7" y2="266" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="64" y1="197" x2="158" y2="232" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                        </svg>
+                    </td>
+                </tr>
+            </table>
+                              
+            <p><strong>3. Oblique</strong></p>      
+            <table border="2" style="width:30%">
+                <tr>
+                    <td>
+                        <svg width="400" height="400"  >
+                                
+                                <polyline points="50,200 150,200 150,100 50,100 50,200" style="fill:red;stroke:black;stroke-width:2"/>
+                                <polyline points="150,200 185,165 185,65 150,100 150,200" style="fill:blue;stroke:black;stroke-width:2"/>
+                                <polyline points="50,100 150,100 185,65 85,65 50,100" style="fill:green;stroke:black;stroke-width:2"/>
+
+                                <line x1="85" y1="65" x2="85" y2="165" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                                <line x1="185" y1="165" x2="85" y2="165" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                                <line x1="50" y1="200" x2="85" y2="165" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+
+                        </svg>
+                    </td>
+                </tr>
+            </table>
+
+           <h3>B) PERSPECTIVE PROJECTIONS</h3>                     
+            <table border="2" style="width:30%">
+                <tr>
+                    <td>
+                        <h4>ONE POINT</h4> 
+                        <svg width="400" height="400">
+                            <polyline points="50,200 150,200 150,100 50,100 50,200" style="fill:red;stroke:black;stroke-width:2" />
+
+                            <line x1="60" y1="190" x2="140" y2="190" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="140" y1="190" x2="140" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="140" y1="110" x2="60" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="60" y1="110" x2="60" y2="190" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+
+                            <line x1="60" y1="190" x2="50" y2="200" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="140" y1="190" x2="150" y2="200" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="150" y1="100" x2="140" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                            <line x1="50" y1="100" x2="60" y2="110" stroke-width="2" stroke="black" stroke-dasharray="3"/>
+                        </svg>
+                    </td>
+
+                    <td>
+                        <h4>TWO POINT</h4>
+                        <svg width="400" height="400" >
+                        
+                        <polyline points="100,200 100,100 30,105 30,195 100,200" style="fill:red;stroke:black;stroke-width:2" />
+                        <polyline points="100,200 100,100 170,105 170,195 100,200" style="fill:blue;stroke:black;stroke-width:2" />
+
+                        </svg>
+                    </td>
+
+                    <td>
+                        <h4>THREE POINT</h4>
+                        <svg width="400" height="400"  >    
+                            <polyline points="100,300 90,200 181,157 182,243 100,300" style="fill:blue;stroke:black;stroke-width:2" />
+                            <polyline points="100,300 90,200 13,156 24,236 100,300" style="fill:red;stroke:black;stroke-width:2" />
+                            <polyline points="90,200 13,156 105,114 181,157 90,200" style="fill:green;stroke:black;stroke-width:2" />
+                        </svg>
+                    </td>
+                </tr>
+            </table>                                       
+        </div>
+    </body>
+</html>

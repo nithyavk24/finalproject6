@@ -1,0 +1,30 @@
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+* { box-sizing: border-box }
+
+
+.edge{
+    fill: white;
+    stroke: black;
+    stroke-width: 1;
+}
+.button{
+    fill: #2060dd;
+    stroke: #2580ff;
+    stroke-width: 1;
+}
+.button:hover{
+    stroke-width: 3;
+}
+ 
+
+ 
+
