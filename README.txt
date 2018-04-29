@@ -1,7 +1,9 @@
 
-1. Folder contains two html files. 
+1. Folder contains these html files. 
 	     1. index.html 
 	     2. 3d.html
+	     3. mapping.html
+	     4. transformation.html
 2. index.html contains the html, svg and java script code to shows 8 different projection types of an object cube.
 	i.e. 1. Multiview Orthographic 
 	     2.Isometric 
